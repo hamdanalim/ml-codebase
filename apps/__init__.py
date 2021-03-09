@@ -13,8 +13,6 @@ def create_app(env=None):
     app = Flask(__name__)
     app.config.from_object(config_by_name["dev"])
 
-    # api = Api(app)
-
     app.register_blueprint(api_pathv1, url_prefix="/api/v1")
 
     return app
