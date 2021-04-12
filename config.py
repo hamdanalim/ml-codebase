@@ -13,9 +13,7 @@ class BaseConfig:
 
 class DevelopmentConfig(BaseConfig):
     CONFIG_NAME = "dev"
-    SECRET_KEY = os.getenv(
-        "DEV_SECRET_KEY", "You can't see California without Marlon Widgeto's eyes"
-    )
+    SECRET_KEY = os.getenv("DEV_SECRET_KEY", "Secret")
     DEBUG = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     TESTING = False
@@ -26,7 +24,7 @@ class DevelopmentConfig(BaseConfig):
 
 class TestingConfig(BaseConfig):
     CONFIG_NAME = "test"
-    SECRET_KEY = os.getenv("TEST_SECRET_KEY", "Thanos did nothing wrong")
+    SECRET_KEY = os.getenv("TEST_SECRET_KEY", "Secret")
     DEBUG = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     TESTING = True
@@ -35,7 +33,7 @@ class TestingConfig(BaseConfig):
 
 class ProductionConfig(BaseConfig):
     CONFIG_NAME = "prod"
-    SECRET_KEY = os.getenv("PROD_SECRET_KEY", "I'm Ron Burgundy?")
+    SECRET_KEY = os.getenv("PROD_SECRET_KEY", "seret")
     DEBUG = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     TESTING = False
